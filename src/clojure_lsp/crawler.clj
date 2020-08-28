@@ -110,7 +110,7 @@
         user-config (get-in @db/db [:settings :clj-kondo])
         kondo-dir (.resolve root-path ".clj-kondo")]
     (cond-> {:cache true
-             :cache-dir ".clj-kondo/cache"}
+             :cache-dir ".clj-kondo/.cache"}
       (.exists (.toFile kondo-dir))
       (assoc :cache-dir (str (.resolve kondo-dir ".cache")) :config-dir (str kondo-dir))
 
